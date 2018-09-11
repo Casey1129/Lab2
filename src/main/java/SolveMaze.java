@@ -37,12 +37,17 @@ public class SolveMaze {
         for (int step = 0; step < 1000; step++) {
             // Implement your maze solving algorithm here
             while ( !maze.isFinished()) {
-                maze.turnLeft();
-                while (!maze.canMove()){
+                while (maze.canMove()){
+                    maze.move();
+                    i++;
+                }
+                if (Math.random()<0.5) {
+                    maze.turnLeft();
+                } else {
                     maze.turnRight();
                 }
-                maze.move();
-                i++;
+
+
 
             }
 
